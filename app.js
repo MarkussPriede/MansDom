@@ -1,17 +1,9 @@
-var btns = document.querySelectorAll('#book-list ul li');
+const list = document.querySelector('#book-list ul');
 
-Array.from(btns).forEach(function(btn){
-  btn.addEventListener('click', (e){
-
+// delete books
+list.addEventListener('click', (e) => {
+  if(e.target.className == 'delete'){
     const li = e.target.parentElement;
     li.parentNode.removeChild(li);
-
-  });
-});
-
-const link = document.querySelector('#page-banner a');
-
-link.addEventListener('click', function(e){
-  e.preventDefault();
-  console.log('Navigation to', e.target.textContent, 'was prevented');
+  }
 });
